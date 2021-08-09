@@ -5,7 +5,7 @@ import { DRAWER_WIDTH } from '../../../constants';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import { NoteAdd as NoteAddIcon, Source as SourceIcon } from '@material-ui/icons';
 
 const DrawerHeader = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -44,21 +44,19 @@ const Sidebar: React.FC<SidebarProps> = ({ open, handleDrawerClose }) => {
       </DrawerHeader>
       <Divider />
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <ListItem button>
+          <ListItemIcon>
+            <NoteAddIcon />
+          </ListItemIcon>
+          <ListItemText primary="Nuevo" />
+        </ListItem>
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+        {['Contenido 1', 'Contenido 2', 'Contenido 3'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              <SourceIcon />
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>

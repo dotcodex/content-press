@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ open, handleDrawerOpen }) => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap component="div">
-          Persistent drawer
+          ContentPress
         </Typography>
       </Toolbar>
     </AppBar>

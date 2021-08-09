@@ -13,13 +13,13 @@ const Main = styled('main',
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: `-${DRAWER_WIDTH}px`,
+    // marginLeft: `-${DRAWER_WIDTH}px`,
     ...(open && {
       transition: theme.transitions.create('margin', {
         easing: theme.transitions.easing.easeOut,
         duration: theme.transitions.duration.enteringScreen,
       }),
-      marginLeft: 0,
+      marginLeft: DRAWER_WIDTH,
     }),
   }));
 
@@ -46,6 +46,7 @@ const DefaultLayout: React.FC<DefaultLayoutProps> = ({ children }) => {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+  console.log(open)
   return (
     <Box>
       <Header open={open} handleDrawerOpen={handleDrawerOpen} />
